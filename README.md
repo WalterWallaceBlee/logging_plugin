@@ -18,3 +18,26 @@ IOS permissions:
 <string>This app needs access to location when open.</string>
 <key>NSLocationAlwaysUsageDescription</key>
 <string>This app needs access to location when in the background.</string>
+
+event body JSON format:
+{
+locationData:{
+    longitude:double
+    latitude:double
+    timestamp:String in UTC Iso8061 format
+},
+deviceData:{
+    platform:String
+    model:String(user agent in web)
+    osVersion:String
+    manufacturer:String(vendor in web)
+},
+timeData:{
+    timeIso8601:String in UTC Iso8061 format
+    timeMsEpoch:Int (milliseconds since epoch)
+    timezone:String
+},
+eventType:String (what event type: error, creation, new page),
+eventDescription:String
+eventParam:String (json string for event unique parameters, may be null)
+}

@@ -68,7 +68,7 @@ class GenericEventLogger {
     Map locationData = {};
     locationData['longitude'] = _position.longitude;
     locationData['latitude'] = _position.latitude;
-    locationData['timestamp'] = _position.timestamp;
+    locationData['timestamp'] = _position.timestamp?.toUtc().toIso8601String();
     //structure time data
     DateTime timeStamp = DateTime.now().toUtc();
     Map timeData = {};
@@ -95,7 +95,7 @@ class GenericEventLogger {
     if (kIsWeb) {
       deviceData["platform"] = "Web";
       _webBrowserInfo ??= await deviceInfo.webBrowserInfo;
-      deviceData['userAgent'] = _webBrowserInfo?.userAgent;
+      deviceData['model'] = _webBrowserInfo?.userAgent;
       deviceData['osVersion'] = _webBrowserInfo?.platform;
       deviceData['manufacturer'] = _webBrowserInfo?.vendor;
     }
