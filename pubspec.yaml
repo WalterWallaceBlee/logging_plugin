@@ -1,6 +1,6 @@
 name: logging_plugin
-description: A new Flutter project.
-version: 0.0.1
+description: Generic Logging Plugin to log events to a url in json format
+version: 0.0.2
 homepage:
 
 environment:

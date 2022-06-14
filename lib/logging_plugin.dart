@@ -27,10 +27,12 @@ class GenericEventLogger {
   static WebBrowserInfo? _webBrowserInfo;
   static final Connectivity _connectivity = Connectivity();
 
+  /// initialize the EventLogger
   static void init(String logURL) {
     _loggingURL = logURL;
   }
 
+  ///private function to set the location internally
   static Future<void> _getLocation() async {
     bool isServiceEnabled = false;
     LocationPermission isPermissionEnabled = LocationPermission.denied;
@@ -55,7 +57,7 @@ class GenericEventLogger {
         desiredAccuracy: LocationAccuracy.medium);
   }
 
-  //publicly accesible call to update location
+  ///publicly accesible call to update location however often neccisary
   static void updateLocation() {
     _getLocation();
   }
@@ -132,6 +134,8 @@ class GenericEventLogger {
       }
     }
   }
+
+
 }
 
 class LoggingPlugin {
