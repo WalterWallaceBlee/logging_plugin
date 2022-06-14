@@ -20,6 +20,7 @@ IOS permissions:
 <string>This app needs access to location when in the background.</string>
 
 event body JSON format:
+```
 {
 locationData:{
     longitude:double
@@ -41,3 +42,4 @@ eventType:String (what event type: error, creation, new page),
 eventDescription:String
 eventParam:String (json string for event unique parameters, may be null)
 }
+```
